@@ -69,15 +69,30 @@ void setup() {
     attribute("Course", ST_X, ST_Y + 200);
     attribute("Year", ST_X + 200, ST_Y + 100);
 
-    // Relations and Attributes
+    // Relations, Attributes and Cardinality
+    textAlign(CENTER);
+    fill(0, 0, 0);
+
     relation("SUPERVISES", ST_X, (ST_Y + RE_Y) / 2);
+    text("1", ST_X - 20, (ST_Y + RE_Y) / 2 - 70);
+    text("1", ST_X - 20, (ST_Y + RE_Y) / 2 + 80);
 
     relation("STUDIES", (RE_X + SP_X) / 2, RE_Y);
+    text("1", (RE_X + SP_X) / 2 - 75, RE_Y - 10);
+    text("N", (RE_X + SP_X) / 2 + 75, RE_Y - 10);
 
     relation("INTERACTS_WITH", SP_X, (SP_Y + SP_Y + 2 * height / 5) / 2);
     attribute("Interaction", SP_X, SP_Y + 2 * height / 5);
+    text("N", SP_X - 160, (SP_Y + SP_Y + 2 * height / 5) / 2 + 10);
+    text("M", SP_X + 160, (SP_Y + SP_Y + 2 * height / 5) / 2 + 10);
 
     relation("LIVES_IN", (SP_X + EC_X) / 2, SP_Y - 100);
+    text("N", (SP_X + EC_X) / 2 - 65, SP_Y - 120);
+    text("M", (SP_X + EC_X) / 2 + 65, SP_Y - 120);
 
     relation("KEYSTONE_OF", (SP_X + EC_X) / 2, SP_Y + 100);
+    text("1", (SP_X + EC_X) / 2 + 115, SP_Y + 80);
+    text("1", (SP_X + EC_X) / 2 - 115, SP_Y + 80);
+
+    save("er_diagram.png");
 }
