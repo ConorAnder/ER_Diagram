@@ -5,7 +5,7 @@ void entity(String name, float x, float y) {
 }
 
 void entity(String name, float x, float y, boolean weak) {
-    fill(255, 255, 255);
+    fill(220, 220, 220);
     stroke(0, 0, 0);
     strokeWeight(2);
 
@@ -93,12 +93,12 @@ void attribute(String name, float x, float y, String type) {
     }
     catch(Exception e) {
         print("Unknown attribute type: " + type + "\n");
-        print("Try the following:\n   standard\n   derived\n   primary\n   derived primary\n   multivalued\n");
+        print("Try the following:\n   standard\n   derived\n   primary\n   derived primary\n   weak primary\n   multivalued\n");
     }
 }
 
 void relation(String name, float x, float y) {
-    fill(255, 255, 255);
+    fill(220, 220, 220);
     stroke(0, 0, 0);
     strokeWeight(2);
     textAlign(CENTER);
