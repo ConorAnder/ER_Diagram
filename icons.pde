@@ -39,7 +39,7 @@ void attribute(String name, float x, float y, String type) {
     float ellipse_width = 1.3 * textWidth(name);
     DashedLines dash;
     dash = new DashedLines(this);
-    dash.pattern(20, 10);
+    dash.pattern(5, 5);
 
     if (ellipse_width < 2.5* TEXT_SIZE) {
         ellipse_width = 1.3 * 2.5 * TEXT_SIZE;
@@ -71,6 +71,13 @@ void attribute(String name, float x, float y, String type) {
             fill(0, 0, 0);
             text(name, x, y + 0.3 * TEXT_SIZE);
             line(x - textWidth(name) / 2, y + TEXT_SIZE / 2, x + textWidth(name) / 2, y + TEXT_SIZE / 2);
+            break;
+
+            case "weak primary":
+            ellipse(x, y, ellipse_width, 2.5 * TEXT_SIZE);
+            fill(0, 0, 0);
+            text(name, x, y + 0.3 * TEXT_SIZE);
+            dash.line(x - textWidth(name) / 2, y + TEXT_SIZE / 2, x + textWidth(name) / 2, y + TEXT_SIZE / 2);
             break;
 
             case "multivalued":
